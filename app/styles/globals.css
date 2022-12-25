@@ -1,0 +1,601 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+/*
+body {
+  padding: 0;
+  margin: 0;
+  border: 5% solid black;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+*/
+body {
+   background-color: darkorange;
+}
+.articleImg {
+   height: 300px;
+   width: 300px;
+}
+
+.articleWrapper {
+   margin: 50px 50px;
+   min-height: 1000px;
+   width: auto;
+}
+
+.articleTitle {
+   /* border: solid black 2px;
+   background-color: aqua; */
+   padding: 20px;
+   height: fit-content;
+   width: 100%;
+   text-align: center;
+   font-size: xx-large;
+}
+
+.articleContent {
+   /* border: solid black 2px;
+   background-color: aqua; */
+   margin-left: 42%;
+   margin-top: 50px;
+   margin-right: 50px;
+   width: auto;
+   font-size: x-large;
+}
+
+.articleImage {
+   /* border: solid black 2px;
+   background-color: aqua; */
+   margin: 50px 50px;
+   width: 600px;
+   height: 600px;
+   float: left;
+   box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.4);
+}
+
+.globalWrapper {
+   border: solid black 2px;
+   margin-top: 50px;
+   margin-bottom: 50px;
+   width: 100%;
+   height: 1000px;
+   float: left;
+   background-color: rgb(255, 178, 83);
+   border-radius: 30px;
+}
+
+.commentWrapper {
+   width: 100%;
+   padding-top: 30px;
+   float: left;
+   overflow-y: scroll;
+   height: 600px;
+}
+
+.commentWrapper::-webkit-scrollbar {
+   width: 1em;
+}
+
+.commentWrapper::-webkit-scrollbar-corner {
+   width: 1em;
+}
+
+.comments {
+   width: 60%;
+   min-height: 115px;
+   height: fit-content;
+   background-color: white;
+   margin-left: 30px;
+   margin-bottom: 40px;
+   border-radius: 20px;
+   box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.4);
+   float: left;
+   padding-bottom: 10px;
+}
+
+.comments:nth-child(2n) {
+   background-color:rgba(240, 255, 255, 0.87);
+}
+
+.commentImage {
+   border-radius: 50%;
+   padding: 15px;
+   float: left;
+}
+
+.commentsAuthor {
+   width: 60%;
+   min-height: 150;
+   height: fit-content;
+   background-color: white;
+   margin-right: 20px;
+   margin-bottom: 40px;
+   border-radius: 20px;
+   box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.4);
+   /* margin-left: 660px; */
+   float: right;
+   padding-bottom: 10px;
+}
+
+.commentsAuthorEditImage {
+   height: 27px;
+   width: 27px;
+   float: right;
+   margin: 15px 30px 6px 0;
+}
+
+.commentContent {
+   padding-left: 120px;
+   padding-top: 5px;
+   padding-bottom: 10px;
+   padding-right: 20px;
+}
+
+
+.commentUsername {
+   font-size: large;
+   font-weight: 700;
+}
+
+.commentDate {
+   font-size: medium;
+   padding-right: 15px;
+   float: right;
+   font-weight: 200;
+}
+
+.articleBanner {
+   margin-top: 50px;
+   height: 300px;
+   width: 100%;
+   align-items: center;
+   border: solid black 2px;
+   background-color: aqua;
+   text-align: center;
+   padding-top: 135px;
+}
+
+.writeCommentWrapper {
+   margin-top: 50px;
+   padding: 20px;
+   float: left;
+   margin-bottom: 50px;
+   width: 100%;
+   min-height: 200px;
+   text-align: center;
+}
+
+.writeComment {
+   float: left;
+   height: 100px;
+   width: 60%;
+   border-radius: 20px;
+   padding: 15px;
+   margin-left: 20px;
+}
+
+.buttonPost {
+   width: fit-content;
+   height: fit-content;
+   padding: 20px;
+   border-radius: 20px;
+   border: solid black 2px;
+   background-color: black;
+   color: darkorange;
+   font-weight: 700;
+   font-size: 20px;
+   box-shadow: 0 0 7px 1px rgba(60, 60, 60, 0.4);
+   justify-content: center;
+}
+
+.writeArticleTitle {
+   width: 80%;
+   min-height: 50px;
+   margin: 20px 10%;
+   padding-top: 20px;
+   text-align: center;
+   font-size: 20px;
+   float: left;
+   resize: none;
+}
+
+.writeArticleContent {
+   width: 80%;
+   min-height: 300px;
+   margin: 20px 10%;
+   padding-top: 20px;
+   font-size: 20px;
+   float: left;
+   resize: none;
+}
+
+.countChar{
+   font-size: small;
+   font-weight: 300;
+   margin-left: 1300px;
+}
+
+/* 
+#mainbox {
+   width: 100%;
+   min-height: 400px;
+   margin-bottom: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+#mainbox .box {
+   width: 30%;
+   min-height: 500px;
+   background-color: lightgray;
+   float: left;
+   text-align: justify;
+}
+
+.box:nth-child(2) {
+   margin-right: 5%;
+   margin-left: 5%;
+}
+.box:nth-child(n) {
+   padding: 10px;
+} */
+
+footer {
+   width: 100%;
+   border: solid black 4px;
+   border-left: transparent;
+   border-right: transparent;
+   padding: 10px 10px;
+   margin-top: auto;
+   float: left;
+}
+
+
+img.round{
+   border-radius: 50%;
+}
+
+div
+#center {
+   text-align: center;
+   float: center;
+}
+
+.logo {
+   text-align: left;
+   float: left;
+   padding-left: 5px;   
+   position: absolute;
+}
+
+.form {
+   text-align: center;
+   width: min-content;
+   margin: auto;
+}
+
+button.submitForm {
+   border-radius: 12px;
+   background-color: black;
+   font-size: 20px;
+   padding: 12px 28px;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19 );
+   color: darkorange;
+   min-width: 250px;
+   margin: 20px;
+   margin-bottom: 30px;  
+   transition: all 0.4s;
+   display: inline-block;
+}
+.submitForm span{
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+}
+.submitForm:hover{
+   background-color: darkorange;
+   color: black;
+} 
+.submitForm span:after {
+   content: '\00bb';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.4s;
+}
+.submitForm:hover span {
+   padding-right: 25px;
+}
+.submitForm:hover span:after {
+   opacity: 1;
+   right: 0;
+}
+
+
+
+/* List for users */
+
+ul.user {
+   padding: 2px 16px;
+   display: block;
+   margin: 20px 10px;
+   border-left: 2px solid black;
+   transition: .5s ;
+   width:fit-content ;
+}
+
+.user:hover {
+   border-left: 8px solid black;
+   cursor:pointer ;
+   background-color: rgb(240, 134, 4) ;
+   background-position: 100% 100%;
+}
+
+
+/* Animation for navbar */
+
+.anim-underline-fx {
+   color: inherit;
+   text-decoration: none;
+   background-image: linear-gradient(to right, black 50%,
+   rgb(197, 109, 2) 50%);
+   background-size: 200% 1px;
+   background-repeat: no-repeat;
+   background-position: 100% 100%;
+   transition: background-position .3s;
+}
+
+.anim-underline-fx:hover {
+   background-position: 0% 100%;
+}
+
+
+
+/* * {
+   box-sizing: border-box;
+} */
+
+header {
+   min-height: 50px;
+   text-align: center;
+   line-height: 50px;
+   width: 100%;
+   font-size: x-large;
+   border: solid black 4px;
+   border-left: transparent;
+   border-right: transparent;
+   border-top: transparent;
+}
+
+
+#container {
+   height: 400px;
+   width: 400px;
+   position: relative;
+}
+#image {
+   position: absolute;
+   left: 0;
+   top: 0;
+}
+#text {
+   z-index: 100;
+   position: absolute;
+   color: white;
+   font-size: 24px;
+   font-weight: bold;
+   left: 150px;
+   top: 350px;
+}
+
+
+
+
+
+div #_appdiv {
+   background-color: darkorange;
+}
+
+#list {
+   padding-left: 10px;
+}
+
+#maindiv {
+   width: 100%;
+   min-height: 50px;
+   background-color: lightgray;
+   margin-bottom: 10px;
+}
+
+.clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
+}
+
+#logodiv {
+   width: 50%;
+   min-width: 50px;
+   padding-left: 2%;
+   float: left;
+   line-height: 50px;
+}
+
+#navdiv {
+   width: 50%;
+   min-height: 50px;
+   float: right;
+   line-height: 50px;
+}
+
+#headerbanner {
+   text-align: center;
+   font-size: xxx-large;
+}
+
+#introtext {
+   width: 100%;
+   min-height: 80px;
+   background-color: lightgray;
+   line-height: 80px;
+   text-align: center;
+   margin-bottom: 10px;
+}
+
+#mainbox {
+   width: 100%;
+   min-height: 400px;
+   margin-bottom: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+#mainbox .box {
+   width: 30%;
+   min-height: 500px;
+   background-color: lightgray;
+   float: left;
+   text-align: justify;
+}
+
+.box:nth-child(2) {
+   margin-right: 5%;
+   margin-left: 5%;
+}
+.box:nth-child(n) {
+   padding: 10px;
+}
+
+
+#footer {
+   width: 100%;
+   text-align: right;
+}
+
+#wrapper {
+   width: 90%;
+   margin: auto;
+}
+
+
+img.logopunch {
+   width: 120px;
+   height: 120px;
+   padding-left: 5px;
+   float: left;
+   position: absolute;
+   padding-top: 5px;
+}
+
+div.username {
+   height: 40px;
+   margin-left: 90%;
+   position: absolute;
+   font-size: xx-large;
+   
+}
+
+.article {
+   width: 400px;
+   height: 400px;
+   padding-top: 20px;
+   padding-left: 20px;
+   padding-bottom: 20px;
+   transition: 0.5s;
+}
+.article:hover {
+   -webkit-filter: brightness(70%);
+   transform: scale(1.1);
+}
+
+/*
+body {
+  background: #545454;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} 
+.container {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#toggle {
+  -webkit-appearance: none;
+}
+.button {
+  position: absolute;
+  z-index: 999;
+  width: 43px;
+  height: 43px;
+  background: #11257b;
+  border-radius: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -12px;
+}
+.button:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transform: rotate(90deg);
+  transition: all 0.4s ease;
+}
+.button:after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.4s ease;
+}
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} 
+
+
+/* 
+border-width: 6px;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 3em;
+  background: linear-gradient(white,white) paddingbox, linear-gradient(90deg, darkblue,darkorchid) border-box;
+ */
