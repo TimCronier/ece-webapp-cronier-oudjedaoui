@@ -63,7 +63,6 @@ export default function CreateArticle() {
             </div>
         )
     } else {
-        alert("You must login to write an article !")
         router.push('/login')
     }
     
