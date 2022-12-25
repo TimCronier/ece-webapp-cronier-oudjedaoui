@@ -1,10 +1,12 @@
 import { useSession, useSupabaseClient } from "@supabase/auth-helpers-react"
+import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 
 
 export default function CreateArticle() {
     const session = useSession()
     const supabase = useSupabaseClient()
+    const router = useRouter()
     const [content, setContent] = useState()
     const [title, setTitle] = useState()
     const [source, setSource] = useState()
@@ -28,35 +30,41 @@ export default function CreateArticle() {
         setSource(null)
     }
 
-    return (
-        <div class="globalWrapper">
-            <div class="writeCommentWrapper">
-                <span style={{ fontSize: '30px', fontWeight: '600' }}>Title :</span>
-                <textarea onChange={(e) => {
-                    (
-                        setChar1(e.target.value.length + " (max 100)"));
-                    setTitle(e.target.value);
-                }}
-                    maxlength='100'
-                    class="writeArticleTitle"></textarea>
-                <p class="countChar">{char1}</p>
-                <br /><br />
-                <span style={{ fontSize: '30px', fontWeight: '600' }}>Content :</span>
-                <br />
-                <textarea onChange={(e) => {
-                    (
-                        setChar2(e.target.value.length + " (max 1000)"));
-                    setContent(e.target.value);
-                }}
-                    maxlength='1000'
-                    class="writeArticleContent"></textarea>
-                <p class="countChar">{char2}</p>
-                <br /><br />
-                <span style={{ fontSize: '30px', fontWeight: '600' }}>Image source :</span>
-                <textarea onChange={(e) => setSource(e.target.value)} class="writeArticleTitle"></textarea>
-                <br />
-                <button onClick={(e) => { postArticle() }} class="submitForm"></button>
+    if (session) {
+        return (
+            <div class="globalWrapper">
+                <div class="writeCommentWrapper">
+                    <span style={{ fontSize: '30px', fontWeight: '600' }}>Title :</span>
+                    <textarea onChange={(e) => {
+                        (
+                            setChar1(e.target.value.length + " (max 100)"));
+                        setTitle(e.target.value);
+                    }}
+                        maxlength='100'
+                        class="writeArticleTitle"></textarea>
+                    <p class="countChar">{char1}</p>
+                    <br /><br />
+                    <span style={{ fontSize: '30px', fontWeight: '600' }}>Content :</span>
+                    <br />
+                    <textarea onChange={(e) => {
+                        (
+                            setChar2(e.target.value.length + " (max 1000)"));
+                        setContent(e.target.value);
+                    }}
+                        maxlength='1000'
+                        class="writeArticleContent"></textarea>
+                    <p class="countChar">{char2}</p>
+                    <br /><br />
+                    <span style={{ fontSize: '30px', fontWeight: '600' }}>Image source :</span>
+                    <textarea onChange={(e) => setSource(e.target.value)} class="writeArticleTitle"></textarea>
+                    <br />
+                    <button onClick={(e) => { postArticle() }} class="submitForm"><span>SUBMIT</span></button>
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        alert("You must login to write an article !")
+        router.push('/login')
+    }
+    
 }
