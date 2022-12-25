@@ -26,8 +26,6 @@ export async function getServerSideProps({ params }) {
 export default function Article({ post }) {
    const session = useSession()
    const [comments, setComments] = useState()
-   const [char1, setChar1] = useState("0 (100 max)")
-   const [char2, setChar2] = useState("0 (1000 max)")
    const [newCom, setNewCom] = useState()
 
    function countChar(val) {

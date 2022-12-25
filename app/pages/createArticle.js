@@ -8,6 +8,8 @@ export default function CreateArticle() {
     const [content, setContent] = useState()
     const [title, setTitle] = useState()
     const [source, setSource] = useState()
+    const [char1, setChar1] = useState("0 (100 max)")
+    const [char2, setChar2] = useState("0 (1000 max)")
 
     async function postArticle() {
         try {
