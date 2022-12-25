@@ -120,7 +120,20 @@ export default function Article({ post }) {
                   <button onClick={() => postComment()} class="submitForm"><span>Post comment</span></button>
                </div>
             </div>
-
+            <div class="writeCommentWrapper">
+               <span style={{fontSize:'30px', fontWeight:'600'}}>Title :</span>
+               <textarea onChange={(e) => (setChar1(e.target.value.length + " (max 100)"))} maxlength='100' class="writeArticleTitle"></textarea>
+               <p class="countChar">{char1}</p>
+               <br/><br/>
+               <span style={{fontSize:'30px', fontWeight:'600'}}>Content :</span>
+               <br/>
+               <textarea onChange={(e) => (setChar2(e.target.value.length + " (max 1000)"))} maxlength='1000' class="writeArticleContent"></textarea>
+               <p class="countChar">{char2}</p>
+               <br/><br/>
+               <span style={{fontSize:'30px', fontWeight:'600'}}>Image source :</span>
+               <textarea class="writeArticleTitle"></textarea>
+               
+            </div>  
          </div >
       )
    } else {
@@ -162,17 +175,3 @@ export default function Article({ post }) {
 
 
 
-{/* <div class="writeArticle">
-               <span style={{fontSize:'30px', fontWeight:'600'}}>Title :</span>
-               <textarea onChange={(e) => (setChar1(e.target.value.length + " (max 100)"))} maxlength='100' class="writeArticleTitle"></textarea>
-               <p class="countChar">{char1}</p>
-               <br/><br/>
-               <span style={{fontSize:'30px', fontWeight:'600'}}>Content :</span>
-               <br/>
-               <textarea onChange={(e) => (setChar2(e.target.value.length + " (max 1000)"))} maxlength='1000' class="writeArticleContent"></textarea>
-               <p class="countChar">{char2}</p>
-               <br/><br/>
-               <span style={{fontSize:'30px', fontWeight:'600'}}>Image source :</span>
-               <textarea class="writeArticleTitle"></textarea>
-               
-            </div>  */}
