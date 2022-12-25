@@ -1,6 +1,6 @@
 import { useSession } from "@supabase/auth-helpers-react"
 import { useState, useEffect } from "react"
-import supabase from "../../utils/supabase"
+import supabase from "../utils/supabase"
 
 
 export default function CreateArticle() {
