@@ -19,7 +19,7 @@ export default function Profile() {
             .eq('id', session.user.id)
             .single()
             if(error) throw error
-            if(!data.email) {
+            if(data.email) {
                await supabaseClient
                .from('profiles')
                .update({email: session.user.email})
