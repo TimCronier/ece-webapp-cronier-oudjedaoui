@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/O6S-BfTVCZfCPFagZfv9A/_buildManifest.js",
-    "static/O6S-BfTVCZfCPFagZfv9A/_ssgManifest.js"
+    "static/Z39fDGHj7t03pDaES6ybN/_buildManifest.js",
+    "static/Z39fDGHj7t03pDaES6ybN/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -65,6 +65,12 @@
       "static/chunks/framework-7751730b10fa0f74.js",
       "static/chunks/main-e7a7892cb0edc024.js",
       "static/chunks/pages/contacts-fac4900eac0742c9.js"
+    ],
+    "/izebi": [
+      "static/chunks/webpack-6ef43a8d4a395f49.js",
+      "static/chunks/framework-7751730b10fa0f74.js",
+      "static/chunks/main-e7a7892cb0edc024.js",
+      "static/chunks/pages/izebi-ca53bb3b5baf7207.js"
     ],
     "/login": [
       "static/chunks/webpack-6ef43a8d4a395f49.js",

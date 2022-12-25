@@ -1,15 +1,15 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/about": "pages/about.html",
-  "/contacts": "pages/contacts.html",
-  "/": "pages/index.html",
-  "/login": "pages/login.html",
-  "/profile": "pages/profile.html",
-  "/_document": "pages/_document.js",
+  "/about": "pages/about.js",
+  "/contacts": "pages/contacts.js",
+  "/": "pages/index.js",
+  "/izebi": "pages/izebi.js",
+  "/login": "pages/login.js",
+  "/profile": "pages/profile.js",
   "/admin/contacts/[id]": "pages/admin/contacts/[id].js",
-  "/articles": "pages/articles.html",
-  "/admin/contacts": "pages/admin/contacts.html",
+  "/articles": "pages/articles.js",
+  "/admin/contacts": "pages/admin/contacts.js",
   "/articles/[id]": "pages/articles/[id].js",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js"
 }
