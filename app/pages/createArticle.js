@@ -13,10 +13,6 @@ export default function CreateArticle() {
     const [char1, setChar1] = useState("0 (100 max)")
     const [char2, setChar2] = useState("0 (1000 max)")
 
-    useEffect(() => {
-        if (!session) router.push('/login')
-    })
-
     async function postArticle() {
         try {
             await supabase.from('articles').insert({

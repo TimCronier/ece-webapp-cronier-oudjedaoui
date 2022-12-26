@@ -41,7 +41,6 @@ function MyApp({ Component, pageProps }) {
       <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
         <UserContextProvider>
           <Header />
-          <Navbar />
           <Component {...pageProps} />
           <Footer />
         </UserContextProvider>

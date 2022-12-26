@@ -7,7 +7,7 @@ function Layout( {Children} ) {
   return (
     <div> 
         <Header/>
-        <Navbar/>
+        {/* <Navbar/> */}
         { Children }
         <Footer/>
     </div>
