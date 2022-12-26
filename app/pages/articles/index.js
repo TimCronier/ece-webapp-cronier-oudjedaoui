@@ -23,18 +23,9 @@ export default function Articles() {
 
 
    return (
-      <div style = {{minHeight: '81.3vh'}} id="list">
-         {data ? data.map(article => (
-            <Link href={'/articles/' + article.id} key={article.id}>
-               <ul class='user'>
-                  <a>
-                     Title : {article.title}
-                     <li>Content : {article.content}</li>
-                     <li>Author : {article.author_id}</li>
-                  </a>
-               </ul>
-            </Link>
-         )) : <></>}
+      <div class="articlesWrapper">
+         <span class="articlesTitle">ARTICLES</span>
+         <div class="articleBox"></div>
       </div>
    )
 
@@ -51,3 +42,18 @@ export default function Articles() {
    //       props: {articles: data}
    //    }
    //  }
+
+
+   // <div style = {{minHeight: '81.3vh'}} id="list">
+   //       {data ? data.map(article => (
+   //          <Link href={'/articles/' + article.id} key={article.id}>
+   //             <ul class='user'>
+   //                <a>
+   //                   Title : {article.title}
+   //                   <li>Content : {article.content}</li>
+   //                   <li>Author : {article.author_id}</li>
+   //                </a>
+   //             </ul>
+   //          </Link>
+   //       )) : <></>}
+   //    </div>
