@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import Account from '../Components/Account'
 
 
-export default function Profile() {
+export default function Profile(props) {
    const router = useRouter()
    const session = useSession()
    const supabaseClient = useSupabaseClient()
@@ -33,6 +33,9 @@ export default function Profile() {
 
 
    return (
-      <Account session={session} />
+      <div class={props.darkMode ? "lightText ligthBg" : "darkText darkBg"}>
+         <Account session={session} darkMode={props.darkMode}/>
+      </div>
+      
    )
 }

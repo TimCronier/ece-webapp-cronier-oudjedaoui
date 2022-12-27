@@ -1,9 +1,9 @@
-function Footer() {
+function Footer(props) {
    return (
-      <div>
-         <footer>
+      <div class={!props.darkMode ? "darkText darkBg footDark" : " footLight lightText lightBg"}>
+         <p>
             Site créé par Timothée Cronier et Sami Ouedjani
-         </footer>
+         </p>
       </div>
    )
 }

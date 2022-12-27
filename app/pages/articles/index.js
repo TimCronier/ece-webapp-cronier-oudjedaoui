@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import UsernameCom from '../../Components/UsernameCom'
 
 
-export default function Articles() {
+export default function Articles(props) {
    const session = useSession()
    const supabaseClient = useSupabaseClient()
    const [data, setData] = useState()
@@ -48,15 +48,26 @@ export default function Articles() {
 
    return (
       <div class="articlesWrapper">
-         <span class="articlesTitle">ARTICLES</span>
+         <span class={!props.darkMode ? "articlesTitleDark" : "articlesTitle"}>ARTICLES</span>
          {data ? data.map(article => (
             <Link href={'/articles/' + article.id} key={article.id}>
-               <div class="articleBox">
+               {props.darkMode ? 
+               <div class="articleBoxDark"> 
                   <img class="articleIconImage" src={article.source}></img>
                   <p class="articleIconTitle">{article.title}</p>
                   <br />
                   <p class="articleAuthor">Written by <UsernameCom id={article.author_id} /> </p>
                </div>
+               : 
+               <div class="articleBox"> 
+                  <img class="articleIconImage" src={article.source}></img>
+                  <p class="articleIconTitle">{article.title}</p>
+                  <br />
+                  <p class="articleAuthor">Written by <UsernameCom id={article.author_id} /> </p>
+               </div>
+               }
+                  
+               
             </Link>
          )) : <></>}
       </div>

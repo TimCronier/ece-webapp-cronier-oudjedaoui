@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { useState, useEffect } from "react"
 
 
-export default function CreateArticle() {
+export default function CreateArticle(props) {
     const session = useSession()
     const supabase = useSupabaseClient()
     const router = useRouter()
@@ -13,8 +13,8 @@ export default function CreateArticle() {
     const [char1, setChar1] = useState("0 (100 max)")
     const [char2, setChar2] = useState("0 (1000 max)")
     const [a, setA] = useState(true)
-    
-    
+
+
     useEffect(() => {
         if (session && a) {
             setContent(null)
@@ -45,7 +45,7 @@ export default function CreateArticle() {
             alert("You must fill every field !")
         }
     }
-        
+
 
     return (
         <div class="globalWrapper">
@@ -54,7 +54,7 @@ export default function CreateArticle() {
                 <textarea value={title || ''} disabled={session ? false : true} onChange={(e) => {
                     (
                         setChar1(e.target.value.length + " (max 100)"));
-                        setTitle(e.target.value);
+                    setTitle(e.target.value);
                 }}
                     maxlength='100'
                     class="writeArticleTitle"></textarea>
@@ -65,7 +65,7 @@ export default function CreateArticle() {
                 <textarea value={content || ''} disabled={session ? false : true} onChange={(e) => {
                     (
                         setChar2(e.target.value.length + " (max 1000)"));
-                        setContent(e.target.value);
+                    setContent(e.target.value);
                 }}
                     maxlength='1000'
                     class="writeArticleContent"></textarea>
@@ -74,7 +74,10 @@ export default function CreateArticle() {
                 <span style={{ fontSize: '30px', fontWeight: '600' }}>Image source :</span>
                 <textarea value={source || ''} disabled={session ? false : true} onChange={(e) => setSource(e.target.value)} class="writeArticleTitle"></textarea>
                 <br />
-                <button disabled={session ? false : true} onClick={(e) => { postArticle() }} class={session ? "submitForm" : "submitFormDisabled"}><span>SUBMIT</span></button>
+                {!props.darkMode ?
+                    <button disabled={session} onClick={(e) => { postArticle() }} class={session ? "submitFormDark" : "submitFormDisabledDark"}><span>SUBMIT</span></button>
+                    : <button disabled={session} onClick={(e) => { postArticle() }} class={session ? "submitForm" : "submitFormDisabled"}><span>SUBMIT</span></button>
+                }
             </div>
         </div>
     )

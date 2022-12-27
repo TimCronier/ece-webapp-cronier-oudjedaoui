@@ -20,6 +20,23 @@ body {
    background-color: rgba(255, 255, 255, 0.836);
 }
 
+.lightText {
+   color: black;
+}
+
+.darkText {
+   color: white;
+}
+
+.darkBg {
+   background-color: black;
+}
+
+.lightBg {
+   background-color: white;
+}
+
+
 .homeDiv {
    float: left;
 }
@@ -73,12 +90,11 @@ body {
 
 .globalWrapper {
    border: solid black 2px;
-   margin-top: 50px;
+   background-color: rgb(255, 182, 94);
    margin-bottom: 50px;
    width: 100%;
    height: 1000px;
    float: left;
-   background-color: rgb(255, 178, 83);
 }
 
 .commentWrapper {
@@ -102,6 +118,7 @@ body {
    min-height: 115px;
    height: fit-content;
    background-color: white;
+   color: black;
    margin-left: 30px;
    margin-bottom: 40px;
    border-radius: 20px;
@@ -125,6 +142,7 @@ body {
    min-height: 150;
    height: fit-content;
    background-color: white;
+   color: black;
    margin-right: 20px;
    margin-bottom: 40px;
    border-radius: 20px;
@@ -221,7 +239,6 @@ body {
 }
 
 .articlesWrapper {
-   border: solid black;
    width: 90%;
    min-height: 676px;
    float: left;
@@ -240,10 +257,30 @@ body {
    border-radius: 20px;
 }
 
+.articlesTitleDark {
+   font-size: 40px;
+   font-weight: 700;
+   width: 20%;
+   border: solid white;
+   float: left;
+   text-align: center;
+   margin: 40px 40%;   
+   border-radius: 20px;
+}
+
+.articlesTitleDark {
+   font-size: 40px;
+   font-weight: 700;
+   width: 20%;
+   border: solid white;
+   float: left;
+   text-align: center;
+   margin: 40px 40%;   
+   border-radius: 20px;
+}
+
 .articleBox {
    border: solid black;
-   background-color: white;
-   color: black;
    border-radius: 5px;
    width: 30%;
    height: 500px;
@@ -257,6 +294,7 @@ body {
 
 .articleBox:hover {
    transform: scale(1.05);
+   -webkit-filter: brightness(70%);    
 }
 
 .articleBox:nth-child(2n) {
@@ -265,6 +303,34 @@ body {
 }
 
 .articleBox:nth-child(2n+1) {
+   margin-right: 12%;
+}
+
+.articleBoxDark {
+   border: solid white;
+   border-radius: 5px;
+   width: 30%;
+   height: 500px;
+   float: left;
+   margin-bottom: 100px;
+   margin-top: 30px;
+   cursor:pointer ;
+
+   transition: transform 0.3s;
+}
+
+.articleBoxDark:hover {
+   transform: scale(1.05);
+   border: none;
+   -webkit-filter: brightness(70%); 
+}
+
+.articleBoxDark:nth-child(2n) {
+   margin-left: 12%;
+   margin-right: 16%;
+}
+
+.articleBoxDark:nth-child(2n+1) {
    margin-right: 12%;
 }
 
@@ -362,16 +428,23 @@ body {
    text-align: center;
 }
 
-footer {
-   width: 100%;
-   border: solid black 4px;
-   border-left: transparent;
-   border-right: transparent;
-   padding: 10px 10px;
-   margin-top: auto;
-   float: left;
+.footLight {
+   text-align: center;
+   font-size: 24px;
+   font-weight: 500;
+   border-top: solid black 2px;
+   height: fit-content;
+   padding: 10px;
 }
 
+.footDark {
+   text-align: center;
+   font-size: 24px;
+   font-weight: 500;
+   border-top: solid white 2px;
+   height: fit-content;
+   padding: 10px;
+}
 
 img.round{
    border-radius: 50%;
@@ -466,12 +539,92 @@ button.submitForm {
 }
 .submitForm:hover span {
    padding-right: 25px;
+   font-weight: 600;
 }
 .submitForm:hover span:after {
    opacity: 1;
    right: 0;
 }
 
+
+.submitFormDark {
+   border-radius: 12px;
+   background-color: darkorange;
+   font-size: 20px;
+   padding: 12px 28px;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19 );
+   color: black;
+   margin-bottom: 20px;
+   margin-top: 20px;
+   min-width: 250px;
+   transition: all 0.4s;
+   display: inline-block;
+}
+.submitFormDark span{
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+}
+.submitFormDark:hover{  
+   background-color: white;
+   color: darkorange;
+} 
+.submitFormDark span:after {
+   content: '\00bb';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.4s;
+}
+.submitFormDark:hover span {
+   padding-right: 25px;
+   font-weight: 600;
+}
+.submitFormDark:hover span:after {
+   opacity: 1;
+   right: 0;
+}
+
+
+button.submitFormDisabledDark {
+   border-radius: 12px;
+   background-color: darkorange;
+   font-size: 20px;
+   padding: 12px 28px;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19 );
+   color: black;
+   min-width: 250px;
+   margin: 20px;
+   margin-bottom: 30px;  
+   transition: all 0.4s;
+   display: inline-block;
+}
+.submitFormDisabledDark span{
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+}
+.submitFormDisabledDark:hover{
+   background-color: white;
+   color: red;
+} 
+.submitFormDisabledDark span:after {
+   content: '\2a2f';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.4s;
+}
+.submitFormDisabledDark:hover span {
+   padding-right: 25px;
+   font-weight: 600;
+}
+.submitFormDisabledDark:hover span:after {
+   opacity: 1;
+   right: 0;
+}
 
 
 
@@ -506,6 +659,21 @@ ul.user {
 }
 
 .anim-underline-fx:hover {
+   background-position: 0% 100%;
+}
+
+.anim-underline-fx-Dark {
+   color: inherit;
+   text-decoration: none;
+   background-image: linear-gradient(to right, white 50%,
+   rgb(218, 120, 0) 50%);
+   background-size: 200% 1px;
+   background-repeat: no-repeat;
+   background-position: 100% 100%;
+   transition: background-position .3s;
+}
+
+.anim-underline-fx-Dark:hover {
    background-position: 0% 100%;
 }
 
@@ -675,6 +843,7 @@ div.username {
    height: 608px;
    float: left;
    border-right: solid black;
+   color: black;
 }
 
 .accountGlobbalWrapper {
@@ -718,16 +887,23 @@ div.username {
 .articlesWrap {
    margin-left: 2%;
    margin-bottom: 2%;
-   background-color: rgb(255, 255, 255);
    border: solid  black 1px;
-   color: black;
    font-weight: 500;
    font-size: 20px;
    float: left;
    width: 30%;
    height: 200px;
 }
-
+.articlesWrapDark {
+   margin-left: 2%;
+   margin-bottom: 2%;
+   border: solid white 1px;
+   font-weight: 500;
+   font-size: 20px;
+   float: left;
+   width: 30%;
+   height: 200px;
+}
 
 
 

@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 import LoginUsername from '../Components/LoginUsername'
 import Navbar from './Navbar'
 
-function Header({ }) {
+function Header(props) {
    const session = useSession()
    const supabase = useSupabaseClient()
    const [user, setUser] = useState()
@@ -42,11 +42,12 @@ function Header({ }) {
          </span>
          <img class="headerLogo" src="https://cdn-icons-png.flaticon.com/512/1021/1021799.png" alt="Doctor icon" />         
          <div class="navbarWrapper">
-            <Navbar></Navbar>
+            <Navbar darkMode={props.darkMode}></Navbar>
          </div>
          <div class="accountWrapper">
             <button onClick={() => goToLogin()} class="headerButton"><img style={{ height: '50px', width: '50px' }} src="https://img.icons8.com/ios-glyphs/512/user.png"></img></button>
             <p class="headerUsername">{session ? user : "Login"}</p>
+            <button onClick={props.toggleDarkMode} style={{width: '50px', height: '50px'}}><img src={!props.darkMode ? "https://cdn-icons-png.flaticon.com/512/786/786385.png" : "https://cdn-icons-png.flaticon.com/512/141/141977.png"}></img></button>
          </div>
          
       </div>

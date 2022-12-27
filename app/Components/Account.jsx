@@ -156,7 +156,7 @@ export default function Account({ session }) {
                            ((new Date(article.created_at).getHours() + 1) % 24) + ":" +
                            new Date(article.created_at).getMinutes()}</p>
                            <br/><br/>
-              <button style={{display: 'block', marginLeft: 'auto', marginRight: 'auto'}}onClick={() => deleteArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/4662/4662653.png" ></img></button>
+              <button onClick={() => deleteArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/4662/4662653.png" ></img></button>
               <button onClick={() => editArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/3756/3756522.png" ></img></button>
               </div> 
               

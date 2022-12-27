@@ -10,15 +10,24 @@ import { UserContextProvider } from '../Components/UserContext'
 function MyApp({ Component, pageProps }) {
 
   const [supabase] = useState(() => createBrowserSupabaseClient())
+  const [darkMode, setDarkMode] = useState(true)
+
+  function toggleDarkMode() {
+    setDarkMode(prevDarkMode => !prevDarkMode)
+  }
 
   return (
-    <div>
+    <div class={!darkMode ? "darkText darkBg" : "lightText lightBg"}>
       <title>Punchologue</title>
       <SessionContextProvider supabaseClient={supabase} initialSession={pageProps.initialSession}>
         <UserContextProvider>
-          <Header />
-          <Component {...pageProps} />
-          <Footer />
+          <div>
+            <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>
+          </div>
+          <div class={!darkMode ? "darkText darkBg" : "lightText lightBg"}>
+            <Component {...pageProps} darkMode={darkMode} />
+          </div>
+          <Footer darkMode={darkMode}/>
         </UserContextProvider>
 
       </SessionContextProvider>
