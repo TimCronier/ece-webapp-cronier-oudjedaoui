@@ -22,8 +22,8 @@ We decided to develop this project on the theme of Punchologue, a media dealing 
 
 * Clone this repository, from your local machine:
   ```
-  git clone ...
-  cd ...
+  git clone https://github.com/TimCronier/ece-webapp-cronier-oudjedaoui
+  cd ece-webapp-cronier-oudjedaoui
   ```
 * Start the the application
   ```bash
