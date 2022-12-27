@@ -75,8 +75,8 @@ export default function CreateArticle(props) {
                 <textarea value={source || ''} disabled={session ? false : true} onChange={(e) => setSource(e.target.value)} class="writeArticleTitle"></textarea>
                 <br />
                 {!props.darkMode ?
-                    <button disabled={session} onClick={(e) => { postArticle() }} class={session ? "submitFormDark" : "submitFormDisabledDark"}><span>SUBMIT</span></button>
-                    : <button disabled={session} onClick={(e) => { postArticle() }} class={session ? "submitForm" : "submitFormDisabled"}><span>SUBMIT</span></button>
+                    <button disabled={!session} onClick={(e) => { postArticle() }} class={session ? "submitFormDark" : "submitFormDisabledDark"}><span>SUBMIT</span></button>
+                    : <button disabled={!session} onClick={(e) => { postArticle() }} class={session ? "submitForm" : "submitFormDisabled"}><span>SUBMIT</span></button>
                 }
             </div>
         </div>
