@@ -1,4 +1,3 @@
-
 export default function Contacts() {
    return (
       <div id="list" style = {{minHeight: '81.3vh'}}>
