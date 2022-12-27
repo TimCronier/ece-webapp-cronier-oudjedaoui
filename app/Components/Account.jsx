@@ -3,6 +3,7 @@ import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-r
 import Gravatar from './Gravatar'
 import { comment } from 'postcss'
 import Router, { useRouter } from 'next/router'
+import { BLOCKED_PAGES } from 'next/dist/shared/lib/constants'
 /* @refresh reset */
 
 
@@ -155,7 +156,7 @@ export default function Account({ session }) {
                            ((new Date(article.created_at).getHours() + 1) % 24) + ":" +
                            new Date(article.created_at).getMinutes()}</p>
                            <br/><br/>
-              <button onClick={() => deleteArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/4662/4662653.png" ></img></button>
+              <button style={{display: 'block', margin: 'auto'}}onClick={() => deleteArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/4662/4662653.png" ></img></button>
               <button onClick={() => editArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/3756/3756522.png" ></img></button>
               </div> 
               
