@@ -13,7 +13,7 @@ export default function Home() {
             <div class="box">BOX 2</div>
             <div class="box"> <button onClick={() => setBox(prevState => prevState + " caca")}> add a caca</button> </div>
          </div>
-         <c/>
+         <iframe src="https://youtu.be/eN2CE0Wcn4M" style={{width:'500px', innerHeight:'500px'}}></iframe>
       </div>
    )
 }

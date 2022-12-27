@@ -403,11 +403,9 @@ div
    position: absolute;
 }
 
-.form {
-   text-align: center;
-   width: min-content;
-   margin: auto;
-}
+
+
+
 
 button.submitFormDisabled {
    border-radius: 12px;
@@ -682,60 +680,63 @@ div.username {
    transform: scale(1.1);
 }
 
-/*
-body {
-  background: #545454;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} 
-.container {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.modifyAccount {
+   text-align: center;
+   width: min-content;
+   margin: auto;
+   height: 608px;
+   float: left;
+   border: solid black;
 }
-#toggle {
-  -webkit-appearance: none;
+
+.accountGlobbalWrapper {
+   float: left;
+   width: 90%;
+   margin: 50px 5%;
+   border: solid black;
+   max-height: fit-content;
 }
-.button {
-  position: absolute;
-  z-index: 999;
-  width: 43px;
-  height: 43px;
-  background: #11257b;
-  border-radius: 100%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: -12px;
+
+.middle {
+   margin-left: 35%;
+   padding-top: 20px;
+   width: 100px;
+}  
+
+.listArticlesWrapper {
+   float: left;
+   width: 1353px;
+   height: 608px;
 }
-.button:before {
-  position: absolute;
-  content: "";
-  width: 20px;
-  height: 2px;
-  background: #fff;
-  transform: rotate(90deg);
-  transition: all 0.4s ease;
+
+.listArticlesTitle {
+   text-align: center;
+   width: 100%;
+   padding: 20px 0;
+   height: min-content;
+   font-size: 30px;
+   font-weight: 600;
+   float: left;
 }
-.button:after {
-  position: absolute;
-  content: "";
-  width: 20px;
-  height: 2px;
-  background: #fff;
-  transition: all 0.4s ease;
+
+.listArticles {
+   width: 100%;
+   height: 511px;
+   float: left;
+   overflow-y: scroll;
+   
 }
- */
 
-
-
-
-
+.articlesWrap {
+   margin: 20px;
+   background-color: rgb(83, 44, 0);
+   color: white;
+   font-weight: 500;
+   font-size: 20px;
+   float: left;
+   width: 30%;
+   height: 200px;
+}
 
 
 

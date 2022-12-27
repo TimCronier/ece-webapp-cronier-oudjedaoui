@@ -154,7 +154,7 @@ if (session) {
             </div>
 
             <div class="writeCommentWrapper">
-               <textarea value={newCom || ''} onChange={(e) => setNewCom(e.target.value)} class="writeComment"></textarea>
+               <textarea placeholder="Your comment..." value={newCom || ''} onChange={(e) => setNewCom(e.target.value)} class="writeComment"></textarea>
                {editing ? 
                   <button onClick={() => postEditedComment()} class="submitForm"><span>Edit comment</span></button>
                   : <button onClick={() => postComment()} class="submitForm"><span>Post comment</span></button>

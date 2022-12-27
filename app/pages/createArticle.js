@@ -12,15 +12,15 @@ export default function CreateArticle() {
     const [source, setSource] = useState("You must be connected !")
     const [char1, setChar1] = useState("0 (100 max)")
     const [char2, setChar2] = useState("0 (1000 max)")
-    const [zebi, setZebi] = useState(true)
+    const [a, setA] = useState(true)
     
     
     useEffect(() => {
-        if (session && zebi) {
+        if (session && a) {
             setContent(null)
             setTitle(null)
             setSource(null)
-            setZebi(false)
+            setA(false)
         }
     })
 

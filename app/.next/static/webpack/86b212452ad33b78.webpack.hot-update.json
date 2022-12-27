@@ -1,0 +1,1 @@
+{"c":["pages/index","webpack"],"r":["pages/editArticles/[id]"],"m":["./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=%2Fhome%2Fsuptim%2FDocuments%2Fcheval%2Fece-webapp-cronier-oudjedaoui%2Fapp%2Fpages%2FeditArticles%2F%5Bid%5D.js&page=%2FeditArticles%2F%5Bid%5D!","./pages/editArticles/[id].js","./utils/supabase.js"]}
