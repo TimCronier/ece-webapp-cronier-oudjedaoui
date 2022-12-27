@@ -28,15 +28,17 @@ export default function EditArticle({ post }) {
     const [char1, setChar1] = useState("0 (100 max)")
     const [char2, setChar2] = useState("0 (1000 max)")
     const [ok, setOk] = useState(false)
+    const [first, setFirst] = useState(true)
     
     
     useEffect(() => {
-         if (session) {
+         if (session && first) {
             if (session.user.id === post.author_id) {
                setTitle(post.title)
                setContent(post.content)
                setSource(post.source)
                setOk(true)
+               setFirst(false)
             } else {
                setTitle("You can't modify an article that isn't yours !")
                setContent("You can't modify an article that isn't yours !")
@@ -45,11 +47,12 @@ export default function EditArticle({ post }) {
          }
     })
 
+
     async function editArticle() {
         if (content && title && source) {
             try {
                 await supabase.from('articles').upsert({
-                    author_id: session.user.id,
+                    id: post.id,
                     content: content,
                     title: title,
                     source: source
@@ -58,6 +61,7 @@ export default function EditArticle({ post }) {
             } catch (error) {
                 console.log(error)
             }
+            router.push('/profile')
             setContent(null)
             setTitle(null)
             setSource(null)
@@ -94,7 +98,7 @@ export default function EditArticle({ post }) {
                 <span style={{ fontSize: '30px', fontWeight: '600' }}>Image source :</span>
                 <textarea value={source || ''} disabled={!ok} onChange={(e) => setSource(e.target.value)} class="writeArticleTitle"></textarea>
                 <br />
-                <button disabled={!ok} onClick={(e) => { postArticle() }} class={ok ? "submitForm" : "submitFormDisabled"}><span>EDIT</span></button>
+                <button disabled={!ok} onClick={(e) => { editArticle() }} class={ok ? "submitForm" : "submitFormDisabled"}><span>EDIT</span></button>
             </div>
         </div>
     )

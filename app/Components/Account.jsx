@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react'
 import Gravatar from './Gravatar'
 import { comment } from 'postcss'
+import Router, { useRouter } from 'next/router'
 /* @refresh reset */
 
 
@@ -9,6 +10,7 @@ import { comment } from 'postcss'
 export default function Account({ session }) {
   const supabase = useSupabaseClient()
   const user = useUser()
+  const router = useRouter()
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
   const [phoneNumber, setPhoneNumber] = useState(null)
@@ -97,12 +99,16 @@ export default function Account({ session }) {
     }
  }
 
+ function editArticle({id}) {
+  router.push('/editArticles/' + id)
+ }
+
   return (
     <div class="accountGlobbalWrapper">
       <div class="modifyAccount" >
         <div class="middle"><Gravatar email={session ? session.user.email : ''} /></div>
         <br />
-        <label htmlFor="email">Email : </label>
+        <label htmlFor="email">Email : </label><br/>
         <input type="email" value={session ? session.user.email : ''} disabled />
         <br /><br />
         <label htmlFor="username">Username : </label>

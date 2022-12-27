@@ -670,7 +670,7 @@ div.username {
 
 .modifyAccount {
    text-align: center;
-   width: min-content;
+   width: 20%;
    margin: auto;
    height: 608px;
    float: left;
@@ -693,7 +693,7 @@ div.username {
 
 .listArticlesWrapper {
    float: left;
-   width: 1353px;
+   width: 80%;
    height: 608px;
 }
 
