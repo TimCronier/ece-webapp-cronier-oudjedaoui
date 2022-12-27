@@ -1,6 +1,5 @@
 import MD5 from 'crypto-js/md5'
 import { useSession } from '@supabase/auth-helpers-react'
-import { GoTrueClient } from '@supabase/supabase-js';
 
 
 
@@ -49,18 +48,11 @@ async function sameImages() {
 
 
 export default function Gravatar({ email }) {  
-
-  const session = useSession()
-  if (session) {
     return (
       <img src={"https://www.gravatar.com/avatar/"
         + MD5(email)}
         class="round"></img>
         
     )
-  } else return (
-    <></>
-  )
-
 }
 

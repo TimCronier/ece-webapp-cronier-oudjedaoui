@@ -22,9 +22,11 @@ body {
 }
 
 .articleWrapper {
-   margin: 50px 50px;
+   margin: 0 50px;
    min-height: 1000px;
-   width: auto;
+   padding-top: 30px;
+   width: 95%;
+   float: left;
 }
 
 .articleTitle {
@@ -34,7 +36,8 @@ body {
    height: fit-content;
    width: 100%;
    text-align: center;
-   font-size: xx-large;
+   font-size: 40px;
+   font-weight: 700;
 }
 
 .articleContent {
@@ -65,7 +68,6 @@ body {
    height: 1000px;
    float: left;
    background-color: rgb(255, 178, 83);
-   border-radius: 30px;
 }
 
 .commentWrapper {
@@ -186,7 +188,6 @@ body {
    min-height: 50px;
    margin: 20px 10%;
    padding-top: 20px;
-   text-align: center;
    font-size: 20px;
    float: left;
    resize: none;
@@ -209,7 +210,6 @@ body {
 }
 
 .articlesWrapper {
-   background-color: aqua;
    border: solid black;
    width: 90%;
    min-height: 676px;
@@ -225,17 +225,59 @@ body {
    border: solid black;
    float: left;
    text-align: center;
-   margin: 20px 40%;   
+   margin: 40px 40%;   
    border-radius: 20px;
 }
 
 .articleBox {
    border: solid black;
-   background-color: red;
+   background-color: rgb(75, 49, 0);
+   border-radius: 5px;
    width: 30%;
    height: 500px;
-   margin: 40px 12%;
    float: left;
+   margin-bottom: 100px;
+   margin-top: 30px;
+   color: white;
+   cursor:pointer ;
+
+   transition: transform 0.3s;
+}
+
+.articleBox:hover {
+   transform: scale(1.05);
+}
+
+.articleBox:nth-child(2n) {
+   margin-left: 12%;
+   margin-right: 16%;
+}
+
+.articleBox:nth-child(2n+1) {
+   margin-right: 12%;
+}
+
+.articleIconImage {
+   width: 90%;
+   height: 70%;
+   margin-left: 5%;
+   margin-top: 4%;
+   border-radius: 5px;
+}
+
+.articleIconTitle {
+   width: 100%;
+   height: fit-content;
+   padding-top: 10px;
+   text-align: center;
+   font-size: 22px;
+}
+
+.articleAuthor {
+   font-weight: 200;
+   font-size: 15px;
+   float: right;
+   margin-right: 10px;
 }
 
 /* 
@@ -367,6 +409,45 @@ div
    margin: auto;
 }
 
+button.submitFormDisabled {
+   border-radius: 12px;
+   background-color: black;
+   font-size: 20px;
+   padding: 12px 28px;
+   box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19 );
+   color: darkorange;
+   min-width: 250px;
+   margin: 20px;
+   margin-bottom: 30px;  
+   transition: all 0.4s;
+   display: inline-block;
+}
+.submitFormDisabled span{
+   display: inline-block;
+   position: relative;
+   transition: 0.4s;
+}
+.submitFormDisabled:hover{
+   background-color: black;
+   color: red;
+} 
+.submitFormDisabled span:after {
+   content: '\2a2f';
+   position: absolute;
+   opacity: 0;
+   top: 0;
+   right: -20px;
+   transition: 0.4s;
+}
+.submitFormDisabled:hover span {
+   padding-right: 25px;
+}
+.submitFormDisabled:hover span:after {
+   opacity: 1;
+   right: 0;
+}
+
+
 button.submitForm {
    border-radius: 12px;
    background-color: black;
@@ -404,6 +485,7 @@ button.submitForm {
    opacity: 1;
    right: 0;
 }
+
 
 
 

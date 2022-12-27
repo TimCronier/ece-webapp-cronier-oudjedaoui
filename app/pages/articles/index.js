@@ -1,31 +1,64 @@
-import { useUser, useSupabaseClient, useSession} from '@supabase/auth-helpers-react'
+import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-
+import UsernameCom from '../../Components/UsernameCom'
 
 
 export default function Articles() {
    const session = useSession()
    const supabaseClient = useSupabaseClient()
    const [data, setData] = useState()
+   const [username, setUsername] = useState()
 
 
    useEffect(() => {
       async function loadData() {
-         const {data: articles} = await supabaseClient
-         .from('articles')
-         .select('*')
-         
+         const { data: articles } = await supabaseClient
+            .from('articles')
+            .select('*')
+            .order('created_at', { ascending: false })
          setData(articles)
       }
       loadData()
+
    })
+
+   async function loadUsername({ author_id }) {
+      try {
+         let { data, error, status } = await supabase
+            .from('profiles')
+            .select('username')
+            .eq('id', author_id)
+            .single()
+
+         if (error && status !== 406) {
+            throw error
+         }
+
+         if (data) {
+            setUsername(data.username)
+         }
+      } catch (error) {
+         //alert('Error loading user data!')
+         console.log(error)
+      }
+   }
+
 
 
    return (
       <div class="articlesWrapper">
          <span class="articlesTitle">ARTICLES</span>
-         <div class="articleBox"></div>
+         {data ? data.map(article => (
+            <Link href={'/articles/' + article.id} key={article.id}>
+               <div class="articleBox">
+                  <img class="articleIconImage" src={article.source}></img>
+                  <p class="articleIconTitle">{article.title}</p>
+                  <br />
+                  <p class="articleAuthor">Written by <UsernameCom id={article.author_id} /> </p>
+               </div>
+            </Link>
+         )) : <></>}
       </div>
    )
 

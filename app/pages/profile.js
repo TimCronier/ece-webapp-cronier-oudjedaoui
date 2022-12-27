@@ -33,13 +33,6 @@ export default function Profile() {
 
 
    return (
-      <div className="container" style={{ padding: '50px 0 100px 0' }}>
-         {session ? (<Account session={session} />) : (<p>caca</p>)}
-         <button onClick={async () => {
-            
-            if (data.email) alert("caca pas null")
-            else alert("caca null")
-         }}>zebi</button>
-      </div>
+      <Account session={session} />
    )
 }

@@ -1,3 +1,5 @@
+/* @refresh reset */
+
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -26,6 +28,7 @@ function Header({ }) {
 
    useEffect(() => {
       getUsername()
+      console.log("a")
    })
 
    async function goToLogin() {

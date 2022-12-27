@@ -8,7 +8,7 @@ export default function UsernameCom({ id }) {
   const supabase = useSupabaseClient()
   const [username, setUsername] = useState()
   useEffect(() => {
-   getUsername()
+    getUsername()
   })
   async function getUsername() {
     try {
@@ -34,7 +34,7 @@ export default function UsernameCom({ id }) {
 
 
   return (
-    <span class="commentUsername">{username}</span>
+    <span>{username}</span>
   )
 }
 

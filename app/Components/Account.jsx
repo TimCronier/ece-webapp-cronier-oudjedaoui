@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useUser, useSupabaseClient, useSession } from '@supabase/auth-helpers-react'
 import Gravatar from './Gravatar'
+/* @refresh reset */
 
 
 
@@ -9,11 +10,12 @@ export default function Account({ session }) {
   const user = useUser()
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
+  const [phoneNumber, setPhoneNumber] = useState(null)
   const [avatar_url, setAvatarUrl] = useState(null)
 
   useEffect(() => {
     getProfile()
+    
   }, [session])
 
   async function getProfile() {
@@ -22,7 +24,7 @@ export default function Account({ session }) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select('username')
+        .select('username, phoneNumber')
         .eq('id', user.id)
         .single()
 
@@ -30,8 +32,11 @@ export default function Account({ session }) {
         throw error
       }
 
+      console.log(data)
+
       if (data) {
         setUsername(data.username)
+        setPhoneNumber(data.phoneNumber)
       }
     } catch (error) {
       //alert('Error loading user data!')
@@ -41,7 +46,7 @@ export default function Account({ session }) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }) {
+  async function updateProfile({ username, phoneNumber }) {
     try {
       setLoading(true)
 
@@ -49,6 +54,8 @@ export default function Account({ session }) {
         id: user.id,
         username,
         updated_at: new Date().toISOString(),
+        email: user.email,
+        phoneNumber
       }
 
       let { error } = await supabase.from('profiles').upsert(updates)
@@ -66,7 +73,7 @@ export default function Account({ session }) {
     <div class="form">
 <br /><br />
       <label htmlFor="email">Email : </label>
-      <input type="email" value={session.user.email} disabled />
+      <input type="email" value={session ? session.user.email : ''} disabled />
       <br /><br />
       <label htmlFor="username">Username : </label>
       <input
@@ -75,18 +82,18 @@ export default function Account({ session }) {
         onChange={(e) => setUsername(e.target.value)}
       />
       <br /><br />
-      <label htmlFor="website">Message : </label>
+      <label htmlFor="phoneNumber">Phone number : </label>
       <input
         type="text"
-        value={website || ''}
-        onChange={(e) => setWebsite(e.target.value)}
+        value={phoneNumber || ''}
+        onChange={(e) => setPhoneNumber(e.target.value)}
       />
 <br /><br />
 
       <div>
         <button
           class="submitForm"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          onClick={() => updateProfile({ username, phoneNumber })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
@@ -98,9 +105,7 @@ export default function Account({ session }) {
           Sign Out
         </button>
       </div>
-
-    <Gravatar email={session.user.email}/>
-     
+    <Gravatar email={session ? session.user.email : ''}/>
     </div>
   )
 }
