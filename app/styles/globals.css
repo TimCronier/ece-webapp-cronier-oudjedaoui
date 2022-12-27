@@ -3,17 +3,34 @@
 @tailwind utilities;
 
 html,
-/*
-body {
-  padding: 0;
-  margin: 0;
-  border: 5% solid black;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+
 */
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+}  */
+
+
 body {
-   background-color: darkorange;
+   background-color: rgba(255, 255, 255, 0.836);
+}
+
+.homeDiv {
+   float: left;
+}
+
+.introText {
+   text-align: center;
+   font-size: 30px;
+   font-weight: 500;
+   margin: auto;
+   padding-bottom: 30px;
+   padding-top: 250px;
 }
 
 .articleImg {
@@ -30,8 +47,6 @@ body {
 }
 
 .articleTitle {
-   /* border: solid black 2px;
-   background-color: aqua; */
    padding: 20px;
    height: fit-content;
    width: 100%;
@@ -41,8 +56,6 @@ body {
 }
 
 .articleContent {
-   /* border: solid black 2px;
-   background-color: aqua; */
    margin-left: 42%;
    margin-top: 50px;
    margin-right: 50px;
@@ -51,8 +64,6 @@ body {
 }
 
 .articleImage {
-   /* border: solid black 2px;
-   background-color: aqua; */
    margin: 50px 50px;
    width: 600px;
    height: 600px;
@@ -231,14 +242,14 @@ body {
 
 .articleBox {
    border: solid black;
-   background-color: rgb(75, 49, 0);
+   background-color: white;
+   color: black;
    border-radius: 5px;
    width: 30%;
    height: 500px;
    float: left;
    margin-bottom: 100px;
    margin-top: 30px;
-   color: white;
    cursor:pointer ;
 
    transition: transform 0.3s;
@@ -280,30 +291,6 @@ body {
    margin-right: 10px;
 }
 
-/* 
-#mainbox {
-   width: 100%;
-   min-height: 400px;
-   margin-bottom: 10px;
-   padding-left: 20px;
-   padding-right: 20px;
-}
-
-#mainbox .box {
-   width: 30%;
-   min-height: 500px;
-   background-color: lightgray;
-   float: left;
-   text-align: justify;
-}
-
-.box:nth-child(2) {
-   margin-right: 5%;
-   margin-left: 5%;
-}
-.box:nth-child(n) {
-   padding: 10px;
-} */
 
 .headerWrapper {
    float: left;
@@ -439,6 +426,7 @@ button.submitFormDisabled {
 }
 .submitFormDisabled:hover span {
    padding-right: 25px;
+   font-weight: 600;
 }
 .submitFormDisabled:hover span:after {
    opacity: 1;
@@ -686,7 +674,7 @@ div.username {
    margin: auto;
    height: 608px;
    float: left;
-   border: solid black;
+   border-right: solid black;
 }
 
 .accountGlobbalWrapper {
@@ -728,9 +716,11 @@ div.username {
 }
 
 .articlesWrap {
-   margin: 20px;
-   background-color: rgb(83, 44, 0);
-   color: white;
+   margin-left: 2%;
+   margin-bottom: 2%;
+   background-color: rgb(255, 255, 255);
+   border: solid  black 1px;
+   color: black;
    font-weight: 500;
    font-size: 20px;
    float: left;
@@ -752,15 +742,6 @@ div.username {
 
 
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
-} 
 
 
 /* 
