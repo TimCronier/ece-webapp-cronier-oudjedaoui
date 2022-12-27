@@ -155,12 +155,12 @@ export default function Account({ session }) {
         <div class="listArticles">
           {articles ? articles.map(article => (
             <div class="articlesWrap">
-              <p>{article.title}</p>
-              <p>Created at : {new Date(article.created_at).getDate() + "/" +
+              <p>{article.title}</p> <br/>
+              <span style={{fontWeight:'200'}}>Created at : {new Date(article.created_at).getDate() + "/" +
                            (new Date(article.created_at).getMonth() + 1) + "/" +
                            new Date(article.created_at).getFullYear() + " | " +
                            ((new Date(article.created_at).getHours() + 1) % 24) + ":" +
-                           new Date(article.created_at).getMinutes()}</p>
+                           new Date(article.created_at).getMinutes()}</span>
                            <br/><br/>
               <button onClick={() => deleteArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/4662/4662653.png" ></img></button>
               <button onClick={() => editArticle(article)} class="commentsAuthorEditImage" ><img src="https://cdn-icons-png.flaticon.com/512/3756/3756522.png" ></img></button>
