@@ -5,7 +5,7 @@ export default function Contacts() {
          <ul>
             
             <li>Timothée Cronier - <strong>timothee.cronier@edu.ece.fr</strong></li>
-            <li>Sami Ouedjani - <strong>sami.ouedjani@edu.ece.fr</strong></li>
+            <li>Sami Oudjedaoui - <strong>sami.oudjedaoui@edu.ece.fr</strong></li>
          </ul>
       </div>
    )
