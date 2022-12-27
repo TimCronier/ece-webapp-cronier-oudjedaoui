@@ -90,11 +90,17 @@ export default function Account({ session }) {
 
   async function deleteArticle({ id }) {
     try {
-       const { data } = await supabase
+       await supabase
+       .from('comments')
+       .delete()
+       .eq('article_id', id)
+       await supabase
           .from('articles')
           .delete()
           .eq('id', id)
        alert("Your article was deleted !")
+
+       
     } catch (error) {
        console.log(error)
     }
