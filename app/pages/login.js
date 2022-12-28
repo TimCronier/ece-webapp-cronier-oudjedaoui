@@ -18,7 +18,7 @@ export default function Login() {
    return (
       <div className="container" style={{ marginTop:'260px' ,position:'absolute', padding: '50px 0 100px 0' }}>
          {!session ? (
-            <Auth supabaseClient={supabase} providers={['github']} />) : (<p>caca</p>
+            <Auth supabaseClient={supabase} providers={['github']} />) : (<p></p>
          )}
       </div>
    )

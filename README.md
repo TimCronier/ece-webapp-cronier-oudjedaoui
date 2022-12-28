@@ -93,3 +93,4 @@ We decided to develop this project on the theme of Punchologue, a media dealing 
 ## Bonus
 
 * You can access the articles you wrote from your account
+* Users who are not registered in Gravatar will have a random profile picture. Sometimes you must refresh the page to see it working normally :(
